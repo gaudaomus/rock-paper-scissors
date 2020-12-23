@@ -20,11 +20,14 @@
       return decisionOut;
     }
     function playRound(playerSelection, computerSelection) {
-      playerSelection = playerSelection[0].toUpperCase() + playerSelection.substr(1).toLowerCase();
+      playerSelection = playerSelection[0].toUpperCase() +
+      playerSelection.substr(1).toLowerCase();
       if (playerSelection === computerSelection) {
         alert("You Tied!");
         return "Tie";
-      } else if ((playerSelection==='Rock' && computerSelection==='Scissors') || (playerSelection==='Scissors' && computerSelection==='Paper') || (playerSelection==='Paper' && computerSelection==='Rock')) {
+      } else if ((playerSelection==='Rock' && computerSelection==='Scissors') ||
+      (playerSelection==='Scissors' && computerSelection==='Paper') ||
+      (playerSelection==='Paper' && computerSelection==='Rock')) {
         alert(`You Win! ${playerSelection} beats ${computerSelection}`);
         return "Win";
       } else {
@@ -38,7 +41,7 @@
       let myPick = undefined;
       let result = undefined;
       for (i = 0; i < rounds; i++) {
-        if ((score/rounds) > 0.5) {
+        if (((score/rounds) > 0.5) || ((score/rounds) < -0.5)) {
           break;
         }
         myPick = prompt("Rock, Paper, Scissors","");
