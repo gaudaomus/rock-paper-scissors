@@ -7,6 +7,9 @@
 <body>
   <button onclick="game()">Play Rock Paper Scissors</button>
   <script>
+    // function that determines computer's rock, paper, scissors selection
+    // using RNG then assigning rock, paper, scissors based on number
+    // returns Rock, Paper, or Scissors
     function computerPlay() {
       let decisionIn = Math.floor(Math.random() * 3) + 1;
       let decisionOut = undefined;
@@ -19,6 +22,10 @@
       }
       return decisionOut;
     }
+    //function that plays one round of rock paper scissors
+    //takes inputs for player selection and computer playerSelection
+    //turns player selection string into first letter uppercase and rest lowercase
+    //alerts result of round and returns result
     function playRound(playerSelection, computerSelection) {
       playerSelection = playerSelection[0].toUpperCase() +
       playerSelection.substr(1).toLowerCase();
@@ -35,6 +42,8 @@
         return "Lose";
       }
     }
+    //plays a prompted number of rounds of rock paper scissors
+    //keeps track of score and displays result in console
     function game() {
       let rounds = prompt("How many rounds do you want to play?",5);
       let score = 0;
